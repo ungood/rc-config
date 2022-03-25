@@ -1,0 +1,18 @@
+---
+summary:
+  name: Sea 7 Aerospace
+  author: ungood
+  info: Space is dark.
+
+colors:
+  PRIMARY1:   0x989898
+  PRIMARY2:   0x000000
+  PRIMARY3:   0x3020E8
+  SECONDARY1: 0xC8C8C8
+  SECONDARY2: 0x707070
+  SECONDARY3: 0x000000
+  FOCUS:      0x108CE0
+  EDIT:       0x009808
+  ACTIVE:     0xF0A420
+  WARNING:    0xE00000
+  DISABLED:   0x888C88

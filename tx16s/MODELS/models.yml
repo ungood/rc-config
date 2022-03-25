@@ -1,0 +1,13 @@
+- "Models":
+  - filename: "model1.yml"
+    name: "Joystick"
+- "Plane":
+  - filename: "model2.yml"
+    name: "FT Adventure"
+  - filename: "model10.yml"
+    name: "Mini Scout"
+  - filename: "model11.yml"
+    name: "iNav"
+- "Quads":
+  - filename: "model3.yml"
+    name: "Acrobee"

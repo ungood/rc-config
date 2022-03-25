@@ -1,0 +1,209 @@
+version: 221
+board: tx16s
+calib: 
+   Rud:
+      mid: 1042
+      spanNeg: 607
+      spanPos: 522
+   Ele:
+      mid: 1037
+      spanNeg: 745
+      spanPos: 827
+   Thr:
+      mid: 1005
+      spanNeg: 834
+      spanPos: 785
+   Ail:
+      mid: 989
+      spanNeg: 791
+      spanPos: 668
+   S1:
+      mid: 992
+      spanNeg: 977
+      spanPos: 1038
+   6POS:
+      mid: 1029
+      spanNeg: 5901
+      spanPos: 11041
+   S2:
+      mid: 1014
+      spanNeg: 999
+      spanPos: 1015
+   LS:
+      mid: 1063
+      spanNeg: 242
+      spanPos: 216
+   RS:
+      mid: 1077
+      spanNeg: 296
+      spanPos: 214
+vBatWarn: 66
+txVoltageCalibration: 0
+backlightMode: backlight_mode_keys
+antennaMode: MODE_PER_MODEL
+disableRtcWarning: 0
+keysBacklight: 0
+internalModule: TYPE_MULTIMODULE
+trainer: 
+   mix: 
+      0:
+         srcChn: 3
+         mode: REPL
+         studWeight: 100
+      1:
+         srcChn: 1
+         mode: REPL
+         studWeight: 100
+      2:
+         srcChn: 2
+         mode: REPL
+         studWeight: 100
+      3:
+         srcChn: 0
+         mode: REPL
+         studWeight: 100
+view: 0
+fai: 0
+beepMode: mode_nokeys
+alarmsFlash: 0
+disableMemoryWarning: 0
+disableAlarmWarning: 0
+stickMode: 1
+timezone: 0
+adjustRTC: 0
+inactivityTimer: 10
+telemetryBaudrate: 0
+hapticMode: mode_nokeys
+switchesDelay: 0
+lightAutoOff: 2
+templateSetup: 21
+PPM_Multiplier: 0
+hapticLength: 2
+beepLength: 2
+hapticStrength: 2
+gpsFormat: 0
+speakerPitch: 0
+speakerVolume: 12
+vBatMin: 67
+vBatMax: 83
+backlightBright: 0
+globalTimer: 81135
+bluetoothBaudrate: 0
+bluetoothMode: OFF
+countryCode: 0
+pwrOnSpeed: 0
+pwrOffSpeed: 0
+imperial: 1
+jitterFilter: 0
+disableRssiPoweroffAlarm: 0
+USBMode: 0
+jackMode: 0
+ttsLanguage: "en"
+beepVolume: 2
+wavVolume: 4
+varioVolume: 2
+backgroundVolume: 3
+varioPitch: 0
+varioRange: 0
+varioRepeat: 0
+customFn: 
+   0:
+      swtch: "ON"
+      func: VOLUME
+      def: "TrimT6,1"
+   1:
+      swtch: "SH2"
+      func: TRAINER
+      def: "sticks,1"
+   2:
+      swtch: "SH0"
+      func: PLAY_TRACK
+      def: "trnoff,!1x"
+   3:
+      swtch: "SH2"
+      func: PLAY_TRACK
+      def: "trnon,!1x"
+   4:
+      swtch: "SG0"
+      func: PLAY_TRACK
+      def: "disarm,!1x"
+   5:
+      swtch: "!SG0"
+      func: PLAY_TRACK
+      def: "armed,!1x"
+   7:
+      swtch: "SE0"
+      func: PLAY_TRACK
+      def: "stbmod,!1x"
+   8:
+      swtch: "!SE0"
+      func: PLAY_TRACK
+      def: "ratmod,!1x"
+   9:
+      swtch: "SE2"
+      func: PLAY_TRACK
+      def: "fm-acr,!1x"
+   10:
+      swtch: "SF2"
+      func: INSTANT_TRIM
+      def: "1"
+auxSerialMode: MODE_NONE
+aux2SerialMode: MODE_NONE
+switchConfig: 
+   SA:
+      type: 3pos
+      name: 
+   SB:
+      type: 3pos
+      name: 
+   SC:
+      type: 3pos
+      name: 
+   SD:
+      type: 3pos
+      name: 
+   SE:
+      type: 3pos
+      name: 
+   SF:
+      type: 2pos
+      name: 
+   SG:
+      type: 3pos
+      name: 
+   SH:
+      type: 2pos
+      name: 
+potsConfig: 
+   S1:
+      type: with_detent
+      name: 
+   6POS:
+      type: multipos_switch
+      name: 
+   S2:
+      type: with_detent
+      name: 
+slidersConfig: 
+   LS:
+      type: with_detent
+      name: 
+   RS:
+      type: with_detent
+      name: 
+currModelFilename: "model11.yml"
+blOffBright: 20
+bluetoothName: ""
+themeName: "EdgeTX"
+themeData: 
+   options: 
+      0:
+         type: Color
+         value: 
+            color: 0x000000
+      1:
+         type: Color
+         value: 
+            color: 0x000000
+ownerRegistrationID: "\x02\x07952746"
+uartSampleMode: 0
