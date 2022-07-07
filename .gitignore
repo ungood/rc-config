@@ -1,0 +1,7 @@
+key
+region
+log-*
+exception*
+*.zip
+normalized/
+ffmpeg/
