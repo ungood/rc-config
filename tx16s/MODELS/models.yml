@@ -1,13 +1,41 @@
-- "Models":
-  - filename: "model1.yml"
-    name: "Joystick"
-- "Plane":
-  - filename: "model2.yml"
-    name: "FT Adventure"
-  - filename: "model10.yml"
-    name: "Mini Scout"
-  - filename: "model11.yml"
-    name: "iNav"
-- "Quads":
-  - filename: "model3.yml"
-    name: "Acrobee"
+- Models:
+    - filename: model1.yml
+      name: Acrobee
+    - filename: model2.yml
+      name: Sunflowers
+    - filename: model3.yml
+      name: Hi-llo
+    - filename: model4.yml
+      name: Gentle Lady
+    - filename: model5.yml
+      name: Dart
+- Modes:
+    - filename: model6.yml
+      name: Joystick
+    - filename: model7.yml
+      name: iNav
+    - filename: model8.yml
+      name: Killer Whale
+- Archived:
+    - filename: model9.yml
+      name: MiniScout
+    - filename: model10.yml
+      name: Tiny Trainer
+    - filename: model11.yml
+      name: Scout
+    - filename: model12.yml
+      name: Mini Scout
+    - filename: model13.yml
+      name: Tiny Trainer
+    - filename: model14.yml
+      name: FT Adventure
+    - filename: model18.yml
+      name: Drift
+- Templates:
+    - filename: model15.yml
+      name: LemonRx Default
+    - filename: model16.yml
+      name: test
+- Boats:
+    - filename: model17.yml
+      name: DragonForce 65

@@ -1,0 +1,546 @@
+header:
+  name: DragonForce 65
+  bitmap: ""
+  modelId:
+    1:
+      val: 7
+timers:
+  0:
+    swtch: SG2
+    mode: START
+    name: Session
+    minuteBeep: 0
+    countdownBeep: 0
+    start: 0
+    persistent: 0
+    countdownStart: 0
+    value: 0
+noGlobalFunctions: 0
+thrTrim: 0
+trimInc: 0
+displayTrims: 2
+ignoreSensorIds: 0
+disableThrottleWarning: 1
+enableCustomThrottleWarning: 0
+customThrottleWarningPosition: 0
+beepANACenter: 0
+extendedLimits: 1
+extendedTrims: 0
+throttleReversed: 0
+flightModeData:
+  0:
+    trim:
+      2:
+        value: 26
+        mode: 0
+      4:
+        value: 116
+        mode: 0
+      5:
+        value: -16
+        mode: 0
+    name: ""
+    fadeIn: 0
+    fadeOut: 0
+mixData:
+  - destCh: 0
+    srcRaw: I1
+    weight: 100
+    swtch: NONE
+    curve:
+      type: 0
+      value: 0
+    delayUp: 0
+    delayDown: 0
+    speedUp: 0
+    speedDown: 0
+    carryTrim: 0
+    mltpx: ADD
+    mixWarn: 0
+    flightModes: 000000000
+    offset: 0
+    name: Sail
+  - destCh: 1
+    srcRaw: I0
+    weight: 100
+    swtch: NONE
+    curve:
+      type: 0
+      value: 0
+    delayUp: 0
+    delayDown: 0
+    speedUp: 0
+    speedDown: 0
+    carryTrim: 0
+    mltpx: ADD
+    mixWarn: 0
+    flightModes: 000000000
+    offset: 0
+    name: Rud
+  - destCh: 4
+    srcRaw: SG
+    weight: 100
+    swtch: NONE
+    curve:
+      type: 0
+      value: 0
+    delayUp: 0
+    delayDown: 0
+    speedUp: 0
+    speedDown: 0
+    carryTrim: 0
+    mltpx: ADD
+    mixWarn: 0
+    flightModes: 000000000
+    offset: 0
+    name: Arm
+limitData:
+  0:
+    min: 0
+    max: -329
+    revert: 0
+    offset: 0
+    ppmCenter: 0
+    symetrical: 0
+    name: ""
+    curve: 0
+  1:
+    min: 0
+    max: 0
+    revert: 1
+    offset: 0
+    ppmCenter: 0
+    symetrical: 0
+    name: ""
+    curve: 0
+expoData:
+  - srcRaw: Ail
+    scale: 0
+    mode: 3
+    chn: 0
+    swtch: NONE
+    flightModes: 000000000
+    weight: 100
+    offset: 0
+    curve:
+      type: 1
+      value: 0
+    carryTrim: 0
+    name: ""
+  - srcRaw: Thr
+    scale: 0
+    mode: 3
+    chn: 1
+    swtch: NONE
+    flightModes: 000000000
+    weight: 100
+    offset: 0
+    curve:
+      type: 1
+      value: 0
+    carryTrim: 0
+    name: ""
+  - srcRaw: LS
+    scale: 0
+    mode: 3
+    chn: 2
+    swtch: NONE
+    flightModes: 000000000
+    weight: 100
+    offset: 0
+    curve:
+      type: 1
+      value: 0
+    carryTrim: 1
+    name: ""
+inputNames:
+  0:
+    val: Rud
+  1:
+    val: Sail
+  2:
+    val: Tr A
+customFn:
+  0:
+    swtch: SG0
+    func: RESET
+    def: All,1
+  1:
+    swtch: SF2
+    func: INSTANT_TRIM
+    def: 1
+swashR:
+  type: TYPE_NONE
+  value: 0
+  collectiveSource: NONE
+  aileronSource: NONE
+  elevatorSource: NONE
+  collectiveWeight: 0
+  aileronWeight: 0
+  elevatorWeight: 0
+thrTraceSrc: Thr
+switchWarningState: BuGu
+thrTrimSw: 0
+potsWarnMode: WARN_OFF
+jitterFilter: GLOBAL
+potsWarnEnabled: 0
+displayChecklist: 0
+telemetryProtocol: 0
+varioData:
+  source: none
+  centerSilent: 0
+  centerMax: 0
+  centerMin: 0
+  min: 0
+  max: 0
+rssiSource: none
+rssiAlarms:
+  disabled: 0
+  warning: 0
+  critical: 0
+moduleData:
+  1:
+    type: TYPE_CROSSFIRE
+    channelsStart: 0
+    channelsCount: 16
+    failsafeMode: NOT_SET
+    mod:
+      crsf:
+        telemetryBaudrate: 5
+trainerData:
+  mode: MASTER_TRAINER_JACK
+  channelsStart: 0
+  channelsCount: -8
+  frameLength: 0
+  delay: 0
+  pulsePol: 0
+telemetrySensors:
+  0:
+    type: TYPE_CUSTOM
+    id1:
+      id: 20
+    subid: 0
+    id2:
+      instance: 3
+    label: RSNR
+    unit: 17
+    prec: 0
+    autoOffset: 0
+    filter: 0
+    logs: 1
+    persistent: 0
+    onlyPositive: 0
+    cfg:
+      custom:
+        ratio: 0
+        offset: 0
+  1:
+    type: TYPE_CUSTOM
+    id1:
+      id: 20
+    subid: 0
+    id2:
+      instance: 4
+    label: ANT
+    unit: 0
+    prec: 0
+    autoOffset: 0
+    filter: 0
+    logs: 1
+    persistent: 0
+    onlyPositive: 0
+    cfg:
+      custom:
+        ratio: 0
+        offset: 0
+  2:
+    type: TYPE_CUSTOM
+    id1:
+      id: 20
+    subid: 0
+    id2:
+      instance: 5
+    label: RFMD
+    unit: 0
+    prec: 0
+    autoOffset: 0
+    filter: 0
+    logs: 1
+    persistent: 0
+    onlyPositive: 0
+    cfg:
+      custom:
+        ratio: 0
+        offset: 0
+  3:
+    type: TYPE_CUSTOM
+    id1:
+      id: 20
+    subid: 0
+    id2:
+      instance: 6
+    label: TPWR
+    unit: 16
+    prec: 0
+    autoOffset: 0
+    filter: 0
+    logs: 1
+    persistent: 0
+    onlyPositive: 0
+    cfg:
+      custom:
+        ratio: 0
+        offset: 0
+  4:
+    type: TYPE_CUSTOM
+    id1:
+      id: 20
+    subid: 0
+    id2:
+      instance: 7
+    label: TRSS
+    unit: 17
+    prec: 0
+    autoOffset: 0
+    filter: 0
+    logs: 1
+    persistent: 0
+    onlyPositive: 0
+    cfg:
+      custom:
+        ratio: 0
+        offset: 0
+  5:
+    type: TYPE_CUSTOM
+    id1:
+      id: 20
+    subid: 0
+    id2:
+      instance: 8
+    label: TQly
+    unit: 13
+    prec: 0
+    autoOffset: 0
+    filter: 0
+    logs: 1
+    persistent: 0
+    onlyPositive: 0
+    cfg:
+      custom:
+        ratio: 0
+        offset: 0
+  6:
+    type: TYPE_CUSTOM
+    id1:
+      id: 20
+    subid: 0
+    id2:
+      instance: 9
+    label: TSNR
+    unit: 17
+    prec: 0
+    autoOffset: 0
+    filter: 0
+    logs: 1
+    persistent: 0
+    onlyPositive: 0
+    cfg:
+      custom:
+        ratio: 0
+        offset: 0
+  7:
+    type: TYPE_CUSTOM
+    id1:
+      id: 20
+    subid: 0
+    id2:
+      instance: 0
+    label: 1RSS
+    unit: 17
+    prec: 0
+    autoOffset: 0
+    filter: 0
+    logs: 1
+    persistent: 0
+    onlyPositive: 0
+    cfg:
+      custom:
+        ratio: 0
+        offset: 0
+  8:
+    type: TYPE_CUSTOM
+    id1:
+      id: 20
+    subid: 0
+    id2:
+      instance: 1
+    label: 2RSS
+    unit: 17
+    prec: 0
+    autoOffset: 0
+    filter: 0
+    logs: 1
+    persistent: 0
+    onlyPositive: 0
+    cfg:
+      custom:
+        ratio: 0
+        offset: 0
+  9:
+    type: TYPE_CUSTOM
+    id1:
+      id: 20
+    subid: 0
+    id2:
+      instance: 2
+    label: RQly
+    unit: 13
+    prec: 0
+    autoOffset: 0
+    filter: 0
+    logs: 1
+    persistent: 0
+    onlyPositive: 0
+    cfg:
+      custom:
+        ratio: 0
+        offset: 0
+  10:
+    type: TYPE_CUSTOM
+    id1:
+      id: 8
+    subid: 0
+    id2:
+      instance: 0
+    label: RxBt
+    unit: 1
+    prec: 1
+    autoOffset: 0
+    filter: 0
+    logs: 1
+    persistent: 0
+    onlyPositive: 0
+    cfg:
+      custom:
+        ratio: 0
+        offset: 0
+  11:
+    type: TYPE_CUSTOM
+    id1:
+      id: 8
+    subid: 0
+    id2:
+      instance: 1
+    label: Curr
+    unit: 2
+    prec: 1
+    autoOffset: 0
+    filter: 0
+    logs: 1
+    persistent: 0
+    onlyPositive: 0
+    cfg:
+      custom:
+        ratio: 0
+        offset: 0
+  12:
+    type: TYPE_CUSTOM
+    id1:
+      id: 8
+    subid: 0
+    id2:
+      instance: 2
+    label: Capa
+    unit: 14
+    prec: 0
+    autoOffset: 0
+    filter: 0
+    logs: 1
+    persistent: 0
+    onlyPositive: 0
+    cfg:
+      custom:
+        ratio: 0
+        offset: 0
+  13:
+    type: TYPE_CUSTOM
+    id1:
+      id: 8
+    subid: 0
+    id2:
+      instance: 3
+    label: Bat%
+    unit: 13
+    prec: 0
+    autoOffset: 0
+    filter: 0
+    logs: 1
+    persistent: 0
+    onlyPositive: 0
+    cfg:
+      custom:
+        ratio: 0
+        offset: 0
+screenData:
+  0:
+    LayoutId: Layout2P1
+    layoutData:
+      zones:
+        0:
+          widgetName: ELRS Telem
+          widgetData:
+            options:
+              0:
+                type: Signed
+                value:
+                  signedValue: 1
+        1:
+          widgetName: Timer
+          widgetData: ~
+        2:
+          widgetName: Outputs
+          widgetData:
+            options:
+              0:
+                type: Signed
+                value:
+                  signedValue: 1
+              1:
+                type: Bool
+                value:
+                  boolValue: 0
+              2:
+                type: Color
+                value:
+                  color: 0x000000
+              3:
+                type: Color
+                value:
+                  color: 0xf8fcf8
+              4:
+                type: Color
+                value:
+                  color: 0x105c98
+      options:
+        0:
+          type: Bool
+          value:
+            boolValue: 1
+        1:
+          type: Bool
+          value:
+            boolValue: 0
+        2:
+          type: Bool
+          value:
+            boolValue: 0
+        3:
+          type: Bool
+          value:
+            boolValue: 1
+        4:
+          type: Bool
+          value:
+            boolValue: 0
+view: 0
+modelRegistrationID: "\x02\x07952746"

@@ -1,0 +1,7 @@
+Arm: SG
+Rates: SB
+
+Recommendations:
+COG: 2"
+Throws: 16 deg
+Expo: 25%

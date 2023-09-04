@@ -45,21 +45,30 @@ disableRtcWarning: 0
 keysBacklight: 0
 internalModule: TYPE_MULTIMODULE
 trainer: 
+   calib: 
+      0:
+         val: 35
+      1:
+         val: 15
+      2:
+         val: 10
+      3:
+         val: 14
    mix: 
       0:
          srcChn: 3
          mode: REPL
          studWeight: 100
       1:
-         srcChn: 1
-         mode: REPL
-         studWeight: 100
-      2:
          srcChn: 2
          mode: REPL
          studWeight: 100
-      3:
+      2:
          srcChn: 0
+         mode: REPL
+         studWeight: 100
+      3:
+         srcChn: 1
          mode: REPL
          studWeight: 100
 view: 0
@@ -87,7 +96,7 @@ speakerVolume: 12
 vBatMin: 67
 vBatMax: 83
 backlightBright: 0
-globalTimer: 81135
+globalTimer: 349957
 bluetoothBaudrate: 0
 bluetoothMode: OFF
 countryCode: 0
@@ -109,44 +118,24 @@ varioRepeat: 0
 customFn: 
    0:
       swtch: "ON"
+      func: BACKLIGHT
+      def: "TrimT5,1"
+   1:
+      swtch: "ON"
       func: VOLUME
       def: "TrimT6,1"
-   1:
+   2:
       swtch: "SH2"
       func: TRAINER
       def: "sticks,1"
-   2:
+   3:
       swtch: "SH0"
       func: PLAY_TRACK
       def: "trnoff,!1x"
-   3:
+   4:
       swtch: "SH2"
       func: PLAY_TRACK
       def: "trnon,!1x"
-   4:
-      swtch: "SG0"
-      func: PLAY_TRACK
-      def: "disarm,!1x"
-   5:
-      swtch: "!SG0"
-      func: PLAY_TRACK
-      def: "armed,!1x"
-   7:
-      swtch: "SE0"
-      func: PLAY_TRACK
-      def: "stbmod,!1x"
-   8:
-      swtch: "!SE0"
-      func: PLAY_TRACK
-      def: "ratmod,!1x"
-   9:
-      swtch: "SE2"
-      func: PLAY_TRACK
-      def: "fm-acr,!1x"
-   10:
-      swtch: "SF2"
-      func: INSTANT_TRIM
-      def: "1"
 auxSerialMode: MODE_NONE
 aux2SerialMode: MODE_NONE
 switchConfig: 
@@ -170,7 +159,7 @@ switchConfig:
       name: 
    SG:
       type: 3pos
-      name: 
+      name: ARM
    SH:
       type: 2pos
       name: 
@@ -191,7 +180,7 @@ slidersConfig:
    RS:
       type: with_detent
       name: 
-currModelFilename: "model11.yml"
+currModelFilename: "model7.yml"
 blOffBright: 20
 bluetoothName: ""
 themeName: "EdgeTX"

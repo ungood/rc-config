@@ -1,6 +1,6 @@
 header: 
-   name: "Joystick"
-   bitmap: ""
+   name: "Acrobee"
+   bitmap: "Acrobee.png"
 telemetryProtocol: 0
 thrTrim: 0
 noGlobalFunctions: 0
@@ -75,6 +75,21 @@ mixData:
    speedDown: 0
    name: ""
  -
+   weight: 30
+   destCh: 3
+   srcRaw: I0
+   carryTrim: 0
+   mixWarn: 0
+   mltpx: ADD
+   offset: 0
+   swtch: "NONE"
+   flightModes: 000000000
+   delayUp: 0
+   delayDown: 0
+   speedUp: 0
+   speedDown: 0
+   name: ""
+ -
    weight: 100
    destCh: 4
    srcRaw: SG
@@ -88,10 +103,25 @@ mixData:
    delayDown: 0
    speedUp: 0
    speedDown: 0
-   name: "ARM"
+   name: "Arm"
  -
    weight: 100
    destCh: 5
+   srcRaw: SE
+   carryTrim: 0
+   mixWarn: 0
+   mltpx: ADD
+   offset: 0
+   swtch: "NONE"
+   flightModes: 000000000
+   delayUp: 0
+   delayDown: 0
+   speedUp: 0
+   speedDown: 0
+   name: "Mode"
+ -
+   weight: 100
+   destCh: 6
    srcRaw: SD
    carryTrim: 0
    mixWarn: 0
@@ -103,7 +133,7 @@ mixData:
    delayDown: 0
    speedUp: 0
    speedDown: 0
-   name: "TURTLE"
+   name: "Turtle"
 expoData: 
  -
    mode: 3
@@ -153,10 +183,13 @@ flightModeData:
    0:
       trim: 
          0:
-            value: 5
+            value: -8
+            mode: 0
+         3:
+            value: 48
             mode: 0
          5:
-            value: -128
+            value: -106
             mode: 0
       name: ""
       swtch: "NONE"
@@ -186,6 +219,29 @@ switchWarningState: AuBuCuDuEuFuGuHu
 rssiSource: none
 thrTrimSw: 0
 potsWarnMode: WARN_OFF
+moduleData: 
+   0:
+      type: TYPE_MULTIMODULE
+      subType: 3,0
+      channelsStart: 0
+      channelsCount: 16
+      failsafeMode: NOT_SET
+      mod: 
+         multi: 
+            disableTelemetry: 0
+            disableMapping: 0
+            autoBindMode: 0
+            lowPowerMode: 0
+            optionValue: 0
+            receiverTelemetryOff: 0
+            receiverHigherChannels: 0
+trainerData: 
+   mode: MASTER_TRAINER_JACK
+   channelsStart: 0
+   channelsCount: -8
+   frameLength: 0
+   delay: 0
+   pulsePol: 0
 inputNames: 
    0:
       val: "Ail"
@@ -200,6 +256,55 @@ screenData:
    0:
       LayoutId: "Layout2P1"
       layoutData: 
+         zones: 
+            0:
+               widgetName: "ModelBmp"
+               widgetData: 
+                  options: 
+                     0:
+                        type: Color
+                        value: 
+                           color: 0x105C98
+                     1:
+                        type: Unsigned
+                        value: 
+                           unsignedValue: 4
+                     2:
+                        type: Bool
+                        value: 
+                           boolValue: 1
+                     3:
+                        type: Color
+                        value: 
+                           color: 0xE0ECF0
+                     4:
+                        type: Bool
+                        value: 
+                           boolValue: 1
+            2:
+               widgetName: "Outputs"
+               widgetData: 
+                  options: 
+                     0:
+                        type: Signed
+                        value: 
+                           signedValue: 1
+                     1:
+                        type: Bool
+                        value: 
+                           boolValue: 0
+                     2:
+                        type: Color
+                        value: 
+                           color: 0x000000
+                     3:
+                        type: Color
+                        value: 
+                           color: 0xE8ECF8
+                     4:
+                        type: Color
+                        value: 
+                           color: 0x105C98
          options: 
             0:
                type: Bool
