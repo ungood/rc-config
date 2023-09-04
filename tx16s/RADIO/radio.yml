@@ -1,4 +1,6 @@
-version: 221
+checksum: 2081
+manuallyEdited: 0
+semver: 2.9.0
 board: tx16s
 calib: 
    Rud:
@@ -81,7 +83,7 @@ stickMode: 1
 timezone: 0
 adjustRTC: 0
 inactivityTimer: 10
-telemetryBaudrate: 0
+internalModuleBaudrate: 0
 hapticMode: mode_nokeys
 switchesDelay: 0
 lightAutoOff: 2
@@ -96,14 +98,14 @@ speakerVolume: 12
 vBatMin: 67
 vBatMax: 83
 backlightBright: 0
-globalTimer: 349957
+globalTimer: 351462
 bluetoothBaudrate: 0
 bluetoothMode: OFF
 countryCode: 0
 pwrOnSpeed: 0
 pwrOffSpeed: 0
+noJitterFilter: 0
 imperial: 1
-jitterFilter: 0
 disableRssiPoweroffAlarm: 0
 USBMode: 0
 jackMode: 0
@@ -136,51 +138,50 @@ customFn:
       swtch: "SH2"
       func: PLAY_TRACK
       def: "trnon,!1x"
-auxSerialMode: MODE_NONE
-aux2SerialMode: MODE_NONE
 switchConfig: 
    SA:
       type: 3pos
-      name: 
+      name: ""
    SB:
       type: 3pos
-      name: 
+      name: ""
    SC:
       type: 3pos
-      name: 
+      name: ""
    SD:
       type: 3pos
-      name: 
+      name: ""
    SE:
       type: 3pos
-      name: 
+      name: ""
    SF:
       type: 2pos
-      name: 
+      name: ""
    SG:
       type: 3pos
-      name: ARM
+      name: "ARM"
    SH:
       type: 2pos
-      name: 
+      name: ""
 potsConfig: 
    S1:
       type: with_detent
-      name: 
+      name: ""
    6POS:
       type: multipos_switch
-      name: 
+      name: ""
    S2:
       type: with_detent
-      name: 
+      name: ""
 slidersConfig: 
    LS:
       type: with_detent
-      name: 
+      name: ""
    RS:
       type: with_detent
-      name: 
+      name: ""
 currModelFilename: "model7.yml"
+modelQuickSelect: 0
 blOffBright: 20
 bluetoothName: ""
 themeName: "EdgeTX"
@@ -195,4 +196,20 @@ themeData:
          value: 
             color: 0x000000
 ownerRegistrationID: "\x02\x07952746"
+rotEncMode: 0
 uartSampleMode: 0
+audioMuteEnable: 0
+imuMax: 0
+imuOffset: 0
+selectedTheme: "EdgeTX Default"
+radioThemesDisabled: 0
+radioGFDisabled: 0
+radioTrainerDisabled: 0
+modelHeliDisabled: 0
+modelFMDisabled: 0
+modelCurvesDisabled: 0
+modelGVDisabled: 0
+modelLSDisabled: 0
+modelSFDisabled: 0
+modelCustomScriptsDisabled: 1
+modelTelemetryDisabled: 0

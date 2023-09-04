@@ -2,7 +2,7 @@
 -- The dynamically loadable part of the demonstration Lua widget.        --
 --                                                                       --
 -- Author:  Jesper Frickmann                                             --
--- Date:    2022-01-26                                                   --
+-- Date:    2022-02-27                                                   --
 -- Version: 1.0.0                                                        --
 --                                                                       --
 -- Copyright (C) EdgeTX                                                  --
@@ -60,7 +60,7 @@ function custom.draw(focused)
 end
 
 function custom.onEvent(event, touchState)
-  if event == EVT_VIRTUAL_ENTER then
+  if (touchState and touchState.tapCount == 2) or (event and event == EVT_VIRTUAL_EXIT) then
     lcd.exitFullScreen()
   end
 end
@@ -95,7 +95,7 @@ local dropDownItems = { }
 local lastSwitch = getSwitchIndex(CHAR_TRIM .. "Rl") - 1
 
 for i, s in switches(-lastSwitch, lastSwitch) do
-  if i ~= 0 then 
+  if i ~= 0 then
     local j = #dropDownIndices + 1
     dropDownIndices[j] = i
     dropDownItems[j] = s
@@ -126,7 +126,7 @@ local menuItems = {
   "Tenth"
 }
 
-gui.menu(COL4, TOP + ROW, 5, menuItems, function(item) playNumber(item.idx, 0) end)
+gui.menu(COL4, TOP + ROW, WIDTH, 5 * ROW, menuItems, function(menu) playNumber(menu.selected, 0) end)
 
 -- Horizontal slider
 gui.label(COL1, TOP + 6 * ROW, WIDTH, HEIGHT, "Horizontal slider:", BOLD)
@@ -201,7 +201,7 @@ function gui.fullScreenRefresh()
   -- Draw header
   lcd.drawFilledRectangle(0, 0, LCD_W, HEADER, COLOR_THEME_SECONDARY1)
   lcd.drawText(COL1, HEADER / 2, "LibGUI   Demo", VCENTER + DBLSIZE + libGUI.colors.primary2)
-  
+
   -- Border
   if toggleButton.value then
     lcd.drawRectangle(0, HEADER, LCD_W, LCD_H - HEADER, libGUI.colors.edit, 5)

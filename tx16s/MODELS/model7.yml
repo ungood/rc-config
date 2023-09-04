@@ -1,6 +1,8 @@
+semver: 2.9.0
 header: 
    name: "iNav"
    bitmap: "iNav.png"
+   labels: ""
 timers: 
    0:
       start: 0
@@ -11,6 +13,8 @@ timers:
       minuteBeep: 0
       persistent: 1
       countdownStart: 0
+      showElapsed: 0
+      extraHaptic: 0
       name: "Flight"
    1:
       start: 0
@@ -21,6 +25,8 @@ timers:
       minuteBeep: 0
       persistent: 2
       countdownStart: 0
+      showElapsed: 0
+      extraHaptic: 0
       name: "Total"
 telemetryProtocol: 0
 thrTrim: 0
@@ -33,6 +39,10 @@ displayChecklist: 0
 extendedLimits: 0
 extendedTrims: 0
 throttleReversed: 0
+enableCustomThrottleWarning: 0
+disableTelemetryWarning: 0
+showInstanceIds: 0
+customThrottleWarningPosition: 0
 beepANACenter: 0
 mixData: 
  -
@@ -328,8 +338,8 @@ expoData:
  -
    mode: 3
    scale: 0
+   trimSource: 0
    srcRaw: Ail
-   carryTrim: 0
    chn: 0
    swtch: "NONE"
    flightModes: 000000000
@@ -342,8 +352,8 @@ expoData:
  -
    mode: 3
    scale: 0
+   trimSource: 0
    srcRaw: Ele
-   carryTrim: 0
    chn: 1
    swtch: "NONE"
    flightModes: 000000000
@@ -356,8 +366,8 @@ expoData:
  -
    mode: 3
    scale: 0
+   trimSource: 0
    srcRaw: Thr
-   carryTrim: 0
    chn: 2
    swtch: "NONE"
    flightModes: 000000000
@@ -370,8 +380,8 @@ expoData:
  -
    mode: 3
    scale: 0
+   trimSource: 0
    srcRaw: Rud
-   carryTrim: 0
    chn: 3
    swtch: "NONE"
    flightModes: 000000000
@@ -384,8 +394,8 @@ expoData:
  -
    mode: 3
    scale: 0
+   trimSource: 0
    srcRaw: SG
-   carryTrim: 0
    chn: 4
    swtch: "NONE"
    flightModes: 000000000
@@ -395,8 +405,8 @@ expoData:
  -
    mode: 3
    scale: 0
+   trimSource: 1
    srcRaw: LS
-   carryTrim: 1
    chn: 5
    swtch: "NONE"
    flightModes: 000000000
@@ -406,8 +416,8 @@ expoData:
  -
    mode: 3
    scale: 0
+   trimSource: 0
    srcRaw: SB
-   carryTrim: 0
    chn: 6
    swtch: "NONE"
    flightModes: 000000000
@@ -417,8 +427,8 @@ expoData:
  -
    mode: 3
    scale: 0
+   trimSource: 0
    srcRaw: SC
-   carryTrim: 0
    chn: 7
    swtch: "NONE"
    flightModes: 000000000
@@ -428,8 +438,8 @@ expoData:
  -
    mode: 3
    scale: 0
+   trimSource: 0
    srcRaw: SD
-   carryTrim: 0
    chn: 8
    swtch: "NONE"
    flightModes: 000000000
@@ -439,8 +449,8 @@ expoData:
  -
    mode: 3
    scale: 0
+   trimSource: 1
    srcRaw: S2
-   carryTrim: 1
    chn: 9
    swtch: "NONE"
    flightModes: 000000000
@@ -450,8 +460,8 @@ expoData:
  -
    mode: 3
    scale: 0
+   trimSource: 1
    srcRaw: S1
-   carryTrim: 1
    chn: 10
    swtch: "NONE"
    flightModes: 000000000
@@ -464,8 +474,8 @@ expoData:
  -
    mode: 3
    scale: 0
+   trimSource: 0
    srcRaw: LS
-   carryTrim: 0
    chn: 11
    swtch: "NONE"
    flightModes: 000000000
@@ -552,7 +562,7 @@ flightModeData:
          7:
             val: 0
          8:
-            val: 0
+            val: 1
    1:
       name: "Acro"
       swtch: "L21"
@@ -646,8 +656,12 @@ gvars:
       prec: 0
       unit: 0
 rssiSource: none
+rfAlarms: 
+   warning: 45
+   critical: 42
 thrTrimSw: 0
 potsWarnMode: WARN_OFF
+jitterFilter: GLOBAL
 moduleData: 
    1:
       type: TYPE_CROSSFIRE
@@ -656,11 +670,8 @@ moduleData:
       channelsCount: 16
       failsafeMode: NOT_SET
       mod: 
-         ppm: 
-            delay: 0
-            pulsePol: 0
-            outputType: 0
-            frameLength: 0
+         crsf: 
+            telemetryBaudrate: 0
 trainerData: 
    mode: MASTER_TRAINER_JACK
    channelsStart: 0
@@ -1190,6 +1201,10 @@ screenData:
                         type: Bool
                         value: 
                            boolValue: 1
+                     3:
+                        type: Bool
+                        value: 
+                           boolValue: 0
             2:
                widgetName: "Timer"
          options: 
@@ -1270,5 +1285,40 @@ screenData:
                         type: Signed
                         value: 
                            signedValue: 9
-view: 0
+         options: 
+            0:
+               type: Bool
+               value: 
+                  boolValue: 0
+            1:
+               type: Bool
+               value: 
+                  boolValue: 0
+            2:
+               type: Bool
+               value: 
+                  boolValue: 0
+            3:
+               type: Bool
+               value: 
+                  boolValue: 0
+            4:
+               type: Bool
+               value: 
+                  boolValue: 0
+view: 1
 modelRegistrationID: "\x02\x07952746"
+usbJoystickExtMode: 0
+usbJoystickIfMode: JOYSTICK
+usbJoystickCircularCut: 0
+radioThemesDisabled: GLOBAL
+radioGFDisabled: GLOBAL
+radioTrainerDisabled: GLOBAL
+modelHeliDisabled: OFF
+modelFMDisabled: GLOBAL
+modelCurvesDisabled: GLOBAL
+modelGVDisabled: GLOBAL
+modelLSDisabled: GLOBAL
+modelSFDisabled: GLOBAL
+modelCustomScriptsDisabled: GLOBAL
+modelTelemetryDisabled: GLOBAL

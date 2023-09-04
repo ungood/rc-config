@@ -1,0 +1,141 @@
+Labels:
+  "Favorites":
+Sort: 1
+Models:
+  model1.yml:
+    hash: "3e19000018575d59"
+    name: "Acrobee"
+    mod0type: 6
+    mod0rf: 2
+    labels: ""
+    bitmap: "Acrobee.png"
+    lastopen: 0
+  model2.yml:
+    hash: "012c000010576b96"
+    name: "Sunflowers"
+    mod0type: 6
+    mod0rf: 5
+    labels: ""
+    bitmap: "Scythe1.png"
+    lastopen: 0
+  model3.yml:
+    hash: "f82b000010576b96"
+    name: "Hi-llo"
+    mod0type: 6
+    mod0rf: 5
+    labels: ""
+    bitmap: "Scythe2.png"
+    lastopen: 0
+  model4.yml:
+    hash: "cd2b000010576b96"
+    name: "Gentle Lady"
+    mod0type: 6
+    mod0rf: 5
+    labels: ""
+    bitmap: "GentleLady.png"
+    lastopen: 0
+  model5.yml:
+    hash: "e133000010576b96"
+    name: "Dart"
+    mod1type: 5
+    labels: ""
+    bitmap: "Drift.png"
+    lastopen: 0
+  model6.yml:
+    hash: "ea0f000010576b96"
+    name: "Joystick"
+    labels: ""
+    bitmap: ""
+    lastopen: 0
+  model7.yml:
+    hash: "945d00002457464f"
+    name: "iNav"
+    mod1type: 5
+    labels: ""
+    bitmap: "iNav.png"
+    lastopen: 1693821483
+  model8.yml:
+    hash: "7b4a000010576b96"
+    name: "Killer Whale"
+    mod1type: 5
+    labels: ""
+    bitmap: "iNav.png"
+    lastopen: 0
+  model9.yml:
+    hash: "dc2b000010576b96"
+    name: "MiniScout"
+    mod0type: 6
+    mod0rf: 5
+    labels: ""
+    bitmap: "MiniScout.png"
+    lastopen: 0
+  model10.yml:
+    hash: "052d000010576b96"
+    name: "Tiny Trainer"
+    mod0type: 6
+    mod0rf: 5
+    labels: ""
+    bitmap: "TTrainer.png"
+    lastopen: 0
+  model11.yml:
+    hash: "cf2b000010576b96"
+    name: "Scout"
+    mod0type: 6
+    mod0rf: 5
+    labels: ""
+    bitmap: "MiniScout.png"
+    lastopen: 0
+  model12.yml:
+    hash: "b223000010576b96"
+    name: "Mini Scout"
+    mod0type: 6
+    mod0rf: 5
+    labels: ""
+    bitmap: "MiniScout.png"
+    lastopen: 0
+  model13.yml:
+    hash: "f31d000010576b96"
+    name: "Tiny Trainer"
+    mod0type: 6
+    mod0rf: 5
+    labels: ""
+    bitmap: "image.png"
+    lastopen: 0
+  model14.yml:
+    hash: "1114000010576b96"
+    name: "FT Adventure"
+    labels: ""
+    bitmap: "Adventure.jpg"
+    lastopen: 0
+  model15.yml:
+    hash: "872b000010576b96"
+    name: "LemonRx Default"
+    mod0type: 6
+    mod0rf: 5
+    labels: ""
+    bitmap: ""
+    lastopen: 0
+  model16.yml:
+    hash: "b32b000010576b96"
+    name: "test"
+    mod0type: 6
+    mod0rf: 5
+    labels: ""
+    bitmap: ""
+    lastopen: 0
+  model17.yml:
+    hash: "eb20000010576b96"
+    name: "DragonForce 65"
+    mod1id: 7
+    mod1type: 5
+    labels: ""
+    bitmap: ""
+    lastopen: 0
+  model18.yml:
+    hash: "4835000010576b96"
+    name: "Drift"
+    mod1type: 5
+    labels: ""
+    bitmap: "Drift.png"
+    lastopen: 0
+

@@ -2,8 +2,8 @@
 -- SoarETX F3K score keeper, loadable component                          --
 --                                                                       --
 -- Author:  Jesper Frickmann                                             --
--- Date:    2022-02-21                                                   --
--- Version: 1.0.0                                                        --
+-- Date:    2023-01-23                                                   --
+-- Version: 1.0.2                                                        --
 --                                                                       --
 -- Copyright (C) EdgeTX                                                  --
 --                                                                       --
@@ -38,6 +38,7 @@ local HEADER =   40
 local LEFT =     40
 local RGT =      LCD_W - 18
 local TOP =      50
+local BOTTOM =   LCD_H - 30
 local LINE =     60
 local LINE2 =    28 
 local HEIGHT =   42
@@ -422,7 +423,7 @@ local function TargetTime()
     end
 	elseif targetType == 3 then -- 1234
     return Best1234Target(winTimer, scores, 4)
-	elseif targetType == 4 then -- Deuces
+	elseif targetType == 5 then -- Deuces
     if #scores == 0 then
       return math.max(0, math.floor(winTimer / 2))
     elseif #scores == 1 then
@@ -474,9 +475,6 @@ function widget.background()
 		nextCall = now + 1000
 	end
 
-	-- Write the current flight mode to a telemetry sensor.
-	setTelemetryValue(0x5050, 0, 224, getFlightMode(), 0, 0, "FM")
-	
 	if state <= STATE_READY and state ~= STATE_FINISHED then
 		InitializeFlight()
 	end
@@ -633,7 +631,7 @@ function libGUI.widgetRefresh()
   for i = 1, taskScores do
     lcd.drawText(COL1, y, string.format("%i.", i), colors.primary1 + DBLSIZE)
     if i > #scores then
-      lcd.drawText(COL2, y, "  -   -   -", colors.primary1 + DBLSIZE)
+      lcd.drawText(COL2, y, "-  -  -", colors.primary1 + DBLSIZE)
     else
       lcd.drawTimer(COL2, y, scores[i], colors.primary1 + DBLSIZE)
     end
@@ -781,7 +779,7 @@ local function SetupScreen(gui, title, pop)
       return event
     end
   end
-  gui.SetEventHandler(EVT_VIRTUAL_EXIT, HandleEXIT)
+  gui.setEventHandler(EVT_VIRTUAL_EXIT, HandleEXIT)
   
   return gui
 end -- SetupScreen
@@ -854,12 +852,12 @@ do -- Setup F3K tasks menu
   }
 
   -- Call back function running when a menu item is selected
-  local function callBack(item, event, touchState)
-    SetupTask(tasks[item.idx], taskData[item.idx])
+  local function callBack(menu, event, touchState)
+    SetupTask(tasks[menu.selected], taskData[menu.selected])
     PushGUI(screenTask)
   end
 
-  menuF3K.menu(LEFT, TOP, N_LINES, tasks, callBack)
+  menuF3K.menu(LEFT, TOP, LCD_W - 2 * LEFT, BOTTOM - TOP, tasks, callBack)
 end
 
 do -- Setup practice tasks menu
@@ -875,16 +873,16 @@ do -- Setup practice tasks menu
   local taskData = {
     { 0, -1, 5, false, 0, 2, false }, -- Just fly
     { 0, -1, 5, false, 2, 2, true },  -- QR
-    { 600, 2, 2, true, 4, 2, false }  -- Deuces
+    { 600, 2, 2, true, 5, 2, false }  -- Deuces
   }
   
   -- Call back function running when a menu item is selected
-  local function callBack(item)
-    SetupTask(tasks[item.idx], taskData[item.idx])
+  local function callBack(menu)
+    SetupTask(tasks[menu.selected], taskData[menu.selected])
     PushGUI(screenTask)
   end
 
-  menuPractice.menu(LEFT, TOP, N_LINES, tasks, callBack)
+  menuPractice.menu(LEFT, TOP, LCD_W - 2 * LEFT, BOTTOM - TOP, tasks, callBack)
 end
 
 
@@ -920,14 +918,14 @@ do -- Setup score keeper screen for F3K and Practice tasks
     
     local s = screenTask.timer(LEFT + 40, y, 60, HEIGHT, 0, nil)
     s.disabled = true
-    s.value = "  -   -   -"
+    s.value = "-  -  -"
     screenTask.scores[i] = s
 
     -- Modify timer's draw function to insert score value
     local draw = s.draw
     function s.draw(idx)
       if i > #scores then 
-        screenTask.scores[i].value = "  -   -   -"
+        screenTask.scores[i].value = "-  -  -"
       else
         screenTask.scores[i].value = scores[i]
       end
@@ -993,7 +991,7 @@ do -- Setup score keeper screen for F3K and Practice tasks
       return event
     end
   end
-  screenTask.SetEventHandler(EVT_VIRTUAL_EXIT, HandleEXIT)
+  screenTask.setEventHandler(EVT_VIRTUAL_EXIT, HandleEXIT)
 end
 
 do -- Prompt asking to save scores and exit task window
@@ -1126,7 +1124,7 @@ do -- Setup score browser screen
       lcd.drawText(x, y, j .. ".")
 
       if j > #record.scores then
-        lcd.drawText(x + 18, y, " -  -  -")
+        lcd.drawText(x + 18, y, "-  -  -")
       elseif record.unitStr == "s" then
         lcd.drawTimer(x + 18, y, record.scores[j])
       else
