@@ -223,7 +223,7 @@ SYSTEM;modelpwr.wav;receiver still connected
 ;modbeg.wav;beginner mode
 ;modint.wav;intermediate mode
 ;modexp.wav;expert mode
-;modstb.wav;stabilizer mode
+;modstb.wav;stabilized mode
 ;modgyr.wav;gyro mode
 # VTX
 ;vtxlow.wav;vee tea ex low
