@@ -1,6 +1,8 @@
+semver: 2.9.0
 header:
-  name: Tiny Trainer
-  bitmap: TTrainer.png
+  name: Hi-llo
+  bitmap: Scythe2.png
+  labels: Archived,Planes
   modelId:
     0:
       val: 0
@@ -15,6 +17,8 @@ timers:
     persistent: 0
     countdownStart: 1
     value: 0
+    showElapsed: 0
+    extraHaptic: 0
   1:
     swtch: "!FM0"
     mode: THR_START
@@ -25,6 +29,8 @@ timers:
     persistent: 0
     countdownStart: 0
     value: 0
+    showElapsed: 0
+    extraHaptic: 0
   2:
     swtch: "!FM0"
     mode: ON
@@ -34,12 +40,15 @@ timers:
     start: 0
     persistent: 2
     countdownStart: 0
-    value: 3865
+    value: 2235
+    showElapsed: 0
+    extraHaptic: 0
 noGlobalFunctions: 0
 thrTrim: 0
 trimInc: 0
 displayTrims: 0
 ignoreSensorIds: 0
+showInstanceIds: 0
 disableThrottleWarning: 0
 enableCustomThrottleWarning: 0
 customThrottleWarningPosition: 0
@@ -50,11 +59,8 @@ throttleReversed: 0
 flightModeData:
   0:
     trim:
-      3:
-        value: 30
-        mode: 0
-      4:
-        value: -112
+      5:
+        value: -8
         mode: 0
     name: Disarmed
     fadeIn: 0
@@ -168,7 +174,7 @@ mixData:
     offset: 0
     name: ""
   - destCh: 4
-    srcRaw: I8
+    srcRaw: I6
     weight: 100
     swtch: NONE
     curve:
@@ -212,17 +218,17 @@ limitData:
     name: Thr
     curve: 0
   1:
-    min: 300
-    max: -193
+    min: 250
+    max: -250
     revert: 1
-    offset: 27
+    offset: 0
     ppmCenter: 0
     symetrical: 0
     name: Ail
     curve: 0
   2:
-    min: 320
-    max: -365
+    min: 400
+    max: -250
     revert: 1
     offset: 0
     ppmCenter: 0
@@ -239,13 +245,13 @@ limitData:
     name: Rud
     curve: 0
   4:
-    min: 299
-    max: -5
+    min: 0
+    max: 0
     revert: 0
     offset: 0
     ppmCenter: 0
     symetrical: 0
-    name: Rele
+    name: Mode
     curve: 0
   5:
     min: 0
@@ -286,7 +292,7 @@ expoData:
     curve:
       type: 0
       value: 0
-    carryTrim: 0
+    trimSource: 0
     name: ""
   - srcRaw: Ail
     scale: 0
@@ -299,7 +305,7 @@ expoData:
     curve:
       type: 1
       value: GV3
-    carryTrim: 0
+    trimSource: 0
     name: ""
   - srcRaw: Ele
     scale: 0
@@ -312,7 +318,7 @@ expoData:
     curve:
       type: 1
       value: GV3
-    carryTrim: 0
+    trimSource: 0
     name: ""
   - srcRaw: Rud
     scale: 0
@@ -325,7 +331,7 @@ expoData:
     curve:
       type: 1
       value: GV3
-    carryTrim: 0
+    trimSource: 0
     name: ""
   - srcRaw: SB
     scale: 0
@@ -338,7 +344,7 @@ expoData:
     curve:
       type: 3
       value: 1
-    carryTrim: 0
+    trimSource: 0
     name: ""
   - srcRaw: SB
     scale: 0
@@ -351,7 +357,7 @@ expoData:
     curve:
       type: 3
       value: 2
-    carryTrim: 0
+    trimSource: 0
     name: ""
   - srcRaw: SE
     scale: 0
@@ -364,7 +370,7 @@ expoData:
     curve:
       type: 0
       value: 0
-    carryTrim: 0
+    trimSource: 0
     name: ""
   - srcRaw: S1
     scale: 0
@@ -377,20 +383,7 @@ expoData:
     curve:
       type: 0
       value: 0
-    carryTrim: 0
-    name: ""
-  - srcRaw: SA
-    scale: 0
-    mode: 3
-    chn: 8
-    swtch: NONE
-    flightModes: 000000000
-    weight: 100
-    offset: 0
-    curve:
-      type: 1
-      value: 0
-    carryTrim: 1
+    trimSource: 0
     name: ""
 inputNames:
   0:
@@ -409,8 +402,6 @@ inputNames:
     val: Mode
   7:
     val: Gain
-  8:
-    val: Rele
 curves:
   0:
     type: 0
@@ -567,10 +558,10 @@ varioData:
   min: 0
   max: 0
 rssiSource: none
-rssiAlarms:
-  disabled: 0
-  warning: 0
-  critical: 0
+rfAlarms:
+  warning: 45
+  critical: 42
+disableTelemetryWarning: 0
 moduleData:
   0:
     type: TYPE_MULTIMODULE
@@ -726,5 +717,19 @@ screenData:
           type: Bool
           value:
             boolValue: 0
-view: 1
+view: 0
 modelRegistrationID: "\x02\x07952746"
+usbJoystickExtMode: 0
+usbJoystickIfMode: JOYSTICK
+usbJoystickCircularCut: 0
+radioThemesDisabled: GLOBAL
+radioGFDisabled: GLOBAL
+radioTrainerDisabled: GLOBAL
+modelHeliDisabled: GLOBAL
+modelFMDisabled: GLOBAL
+modelCurvesDisabled: GLOBAL
+modelGVDisabled: GLOBAL
+modelLSDisabled: GLOBAL
+modelSFDisabled: GLOBAL
+modelCustomScriptsDisabled: GLOBAL
+modelTelemetryDisabled: GLOBAL

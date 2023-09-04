@@ -1,49 +1,18 @@
+semver: 2.9.0
 header:
-  name: Tiny Trainer
-  bitmap: image.png
-  modelId:
-    0:
-      val: 0
-timers:
-  0:
-    swtch: NONE
-    mode: THR
-    name: Battery
-    minuteBeep: 0
-    countdownBeep: 1
-    start: 360
-    persistent: 0
-    countdownStart: 1
-    value: 0
-  1:
-    swtch: SG2
-    mode: THR_START
-    name: Flight
-    minuteBeep: 1
-    countdownBeep: 0
-    start: 0
-    persistent: 0
-    countdownStart: 0
-    value: 0
-  2:
-    swtch: SG2
-    mode: ON
-    name: Total
-    minuteBeep: 0
-    countdownBeep: 0
-    start: 0
-    persistent: 2
-    countdownStart: 0
-    value: 1833
+  name: Joystick
+  bitmap: ""
+  labels: Modes,Favorites
 noGlobalFunctions: 0
 thrTrim: 0
 trimInc: 0
 displayTrims: 0
 ignoreSensorIds: 0
+showInstanceIds: 0
 disableThrottleWarning: 0
 enableCustomThrottleWarning: 0
 customThrottleWarningPosition: 0
-beepANACenter: 2048
+beepANACenter: 0
 extendedLimits: 0
 extendedTrims: 0
 throttleReversed: 0
@@ -51,22 +20,20 @@ flightModeData:
   0:
     trim:
       0:
-        value: -10
+        value: 5
+        mode: 0
+      3:
+        value: 8
         mode: 0
       5:
-        value: 128
+        value: -128
         mode: 0
     name: ""
     fadeIn: 0
     fadeOut: 0
-    gvars:
-      0:
-        val: 72
-      1:
-        val: 22
 mixData:
   - destCh: 0
-    srcRaw: I2
+    srcRaw: I0
     weight: 100
     swtch: NONE
     curve:
@@ -83,7 +50,7 @@ mixData:
     offset: 0
     name: ""
   - destCh: 1
-    srcRaw: I0
+    srcRaw: I1
     weight: 100
     swtch: NONE
     curve:
@@ -98,9 +65,9 @@ mixData:
     mixWarn: 0
     flightModes: 000000000
     offset: 0
-    name: Ail
+    name: ""
   - destCh: 2
-    srcRaw: I1
+    srcRaw: I2
     weight: 100
     swtch: NONE
     curve:
@@ -132,9 +99,9 @@ mixData:
     mixWarn: 0
     flightModes: 000000000
     offset: 0
-    name: Rud
+    name: ""
   - destCh: 4
-    srcRaw: SE
+    srcRaw: SG
     weight: 100
     swtch: NONE
     curve:
@@ -149,9 +116,9 @@ mixData:
     mixWarn: 0
     flightModes: 000000000
     offset: 0
-    name: Mode
-  - destCh: 7
-    srcRaw: LS
+    name: ARM
+  - destCh: 5
+    srcRaw: SD
     weight: 100
     swtch: NONE
     curve:
@@ -166,53 +133,7 @@ mixData:
     mixWarn: 0
     flightModes: 000000000
     offset: 0
-    name: Gain
-limitData:
-  0:
-    min: 0
-    max: 0
-    revert: 0
-    offset: 0
-    ppmCenter: 0
-    symetrical: 0
-    name: Thr
-    curve: 0
-  1:
-    min: 0
-    max: 0
-    revert: 1
-    offset: -246
-    ppmCenter: 0
-    symetrical: 0
-    name: Ail
-    curve: 0
-  2:
-    min: 122
-    max: -12
-    revert: 1
-    offset: 0
-    ppmCenter: 0
-    symetrical: 0
-    name: Ele
-    curve: 0
-  3:
-    min: 243
-    max: -44
-    revert: 1
-    offset: 7
-    ppmCenter: 0
-    symetrical: 0
-    name: Rud
-    curve: 0
-  4:
-    min: 0
-    max: 0
-    revert: 0
-    offset: 0
-    ppmCenter: 0
-    symetrical: 0
-    name: Mode
-    curve: 0
+    name: TURTLE
 expoData:
   - srcRaw: Ail
     scale: 0
@@ -220,12 +141,12 @@ expoData:
     chn: 0
     swtch: NONE
     flightModes: 000000000
-    weight: GV1
+    weight: 100
     offset: 0
     curve:
-      type: 1
-      value: GV2
-    carryTrim: 0
+      type: 0
+      value: 0
+    trimSource: 0
     name: ""
   - srcRaw: Ele
     scale: 0
@@ -233,12 +154,12 @@ expoData:
     chn: 1
     swtch: NONE
     flightModes: 000000000
-    weight: GV1
+    weight: 100
     offset: 0
     curve:
-      type: 1
-      value: GV2
-    carryTrim: 0
+      type: 0
+      value: 0
+    trimSource: 0
     name: ""
   - srcRaw: Thr
     scale: 0
@@ -251,7 +172,7 @@ expoData:
     curve:
       type: 0
       value: 0
-    carryTrim: 0
+    trimSource: 0
     name: ""
   - srcRaw: Rud
     scale: 0
@@ -259,38 +180,12 @@ expoData:
     chn: 3
     swtch: NONE
     flightModes: 000000000
-    weight: GV1
+    weight: 100
     offset: 0
     curve:
-      type: 1
-      value: GV2
-    carryTrim: 0
-    name: ""
-  - srcRaw: S1
-    scale: 0
-    mode: 3
-    chn: 4
-    swtch: NONE
-    flightModes: 000000000
-    weight: 25
-    offset: 75
-    curve:
-      type: 1
+      type: 0
       value: 0
-    carryTrim: 0
-    name: ""
-  - srcRaw: S2
-    scale: 0
-    mode: 3
-    chn: 5
-    swtch: NONE
-    flightModes: 000000000
-    weight: 20
-    offset: 20
-    curve:
-      type: 1
-      value: 0
-    carryTrim: 1
+    trimSource: 0
     name: ""
 inputNames:
   0:
@@ -301,23 +196,6 @@ inputNames:
     val: Thr
   3:
     val: Rud
-  4:
-    val: Rate
-  5:
-    val: Expo
-customFn:
-  0:
-    swtch: SG0
-    func: OVERRIDE_CHANNEL
-    def: 0,-100,1
-  1:
-    swtch: ON
-    func: ADJUST_GVAR
-    def: 0,Src,I4,1
-  2:
-    swtch: ON
-    func: ADJUST_GVAR
-    def: 1,Src,I5,1
 swashR:
   type: TYPE_NONE
   value: 0
@@ -332,34 +210,8 @@ switchWarningState: AuBuCuDuEuFuGuHu
 thrTrimSw: 0
 potsWarnMode: WARN_OFF
 jitterFilter: GLOBAL
-potsWarnEnabled: 2047
-potsWarnPosition:
-  0:
-    val: 1
-  1:
-    val: -64
-  2:
-    val: 3
-  7:
-    val: 18
-  8:
-    val: -57
-displayChecklist: 1
-gvars:
-  0:
-    name: Rat
-    min: 0
-    max: 0
-    popup: 0
-    prec: 0
-    unit: 0
-  1:
-    name: Exp
-    min: 0
-    max: 0
-    popup: 0
-    prec: 0
-    unit: 0
+potsWarnEnabled: 0
+displayChecklist: 0
 telemetryProtocol: 0
 varioData:
   source: none
@@ -369,24 +221,10 @@ varioData:
   min: 0
   max: 0
 rssiSource: none
-rssiAlarms:
-  disabled: 0
-  warning: 0
-  critical: 0
-moduleData:
-  0:
-    type: TYPE_MULTIMODULE
-    subType: 6,3
-    channelsStart: 0
-    channelsCount: 12
-    failsafeMode: NOT_SET
-    mod:
-      multi:
-        disableTelemetry: 0
-        disableMapping: 1
-        autoBindMode: 1
-        lowPowerMode: 0
-        optionValue: 0
+rfAlarms:
+  warning: 45
+  critical: 42
+disableTelemetryWarning: 0
 trainerData:
   mode: MASTER_TRAINER_JACK
   channelsStart: 0
@@ -398,58 +236,6 @@ screenData:
   0:
     LayoutId: Layout2P1
     layoutData:
-      zones:
-        0:
-          widgetName: ModelBmp
-          widgetData:
-            options:
-              0:
-                type: Color
-                value:
-                  color: 0x105c98
-              1:
-                type: Unsigned
-                value:
-                  unsignedValue: 4
-              2:
-                type: Bool
-                value:
-                  boolValue: 1
-              3:
-                type: Color
-                value:
-                  color: 0xe0ecf0
-              4:
-                type: Bool
-                value:
-                  boolValue: 1
-        1:
-          widgetName: Timer
-          widgetData: ~
-        2:
-          widgetName: Outputs
-          widgetData:
-            options:
-              0:
-                type: Signed
-                value:
-                  signedValue: 1
-              1:
-                type: Bool
-                value:
-                  boolValue: 1
-              2:
-                type: Color
-                value:
-                  color: 0x000000
-              3:
-                type: Color
-                value:
-                  color: 0xf8fcf8
-              4:
-                type: Color
-                value:
-                  color: 0x105c98
       options:
         0:
           type: Bool
@@ -473,3 +259,17 @@ screenData:
             boolValue: 0
 view: 0
 modelRegistrationID: "\x02\x07952746"
+usbJoystickExtMode: 0
+usbJoystickIfMode: JOYSTICK
+usbJoystickCircularCut: 0
+radioThemesDisabled: GLOBAL
+radioGFDisabled: GLOBAL
+radioTrainerDisabled: GLOBAL
+modelHeliDisabled: GLOBAL
+modelFMDisabled: GLOBAL
+modelCurvesDisabled: GLOBAL
+modelGVDisabled: GLOBAL
+modelLSDisabled: GLOBAL
+modelSFDisabled: GLOBAL
+modelCustomScriptsDisabled: GLOBAL
+modelTelemetryDisabled: GLOBAL
