@@ -1,0 +1,181 @@
+defaults nosave
+
+
+# version
+# Betaflight / STM32F411 (S411) 4.4.3 Nov 15 2023 / 15:50:37 (738127e7e) MSP API: 1.45
+
+# config: YES
+
+# start the command batch
+batch start
+
+# reset configuration to default settings
+defaults nosave
+
+board_name CRAZYBEEF4DX
+manufacturer_id HAMO
+mcu_id 003800443132510531373731
+signature 
+
+# name: Fractal Bee
+
+# dma
+dma ADC 1 0
+# ADC 1: DMA2 Stream 0 Channel 0
+dma pin A09 NONE
+dma pin A10 NONE
+
+# feature
+feature -TELEMETRY
+
+# serial
+serial 0 131073 115200 57600 0 115200
+
+# beacon
+beacon RX_LOST
+beacon RX_SET
+
+# map
+map AETR1234
+
+# aux
+aux 0 0 0 1700 2100 0 0
+aux 1 0 2 1700 2100 0 0
+aux 2 1 1 900 1300 0 0
+aux 3 2 1 1300 1700 0 0
+aux 4 13 2 1700 2100 0 0
+aux 5 35 2 1700 2100 0 0
+
+# vtxtable
+vtxtable bands 5
+vtxtable channels 8
+vtxtable band 1 BOSCAM_A A CUSTOM     0    0    0    0    0    0    0    0
+vtxtable band 2 BOSCAM_B B CUSTOM     0    0    0    0    0    0    0    0
+vtxtable band 3 BOSCAM_E E CUSTOM     0    0    0    0    0    0    0    0
+vtxtable band 4 FATSHARK F CUSTOM     0 5760    0 5800    0    0    0    0
+vtxtable band 5 RACEBAND R CUSTOM  5658 5695 5732 5769 5806 5843 5880 5917
+vtxtable powerlevels 3
+vtxtable powervalues 14 23 0
+vtxtable powerlabels 25 200 0
+
+# master
+set gyro_lpf1_static_hz = 150
+set gyro_lpf2_static_hz = 300
+set dyn_notch_count = 2
+set dyn_notch_max_hz = 700
+set gyro_lpf1_dyn_min_hz = 150
+set gyro_lpf1_dyn_max_hz = 300
+set acc_lpf_hz = 10
+set acc_trim_pitch = 1
+set acc_calibration = 45,-14,71,1
+set dshot_bidir = ON
+set motor_pwm_protocol = DSHOT300
+set motor_poles = 12
+set motor_output_reordering = 2,3,0,1,4,5,6,7
+set align_board_roll = -180
+set vbat_max_cell_voltage = 450
+set vbat_min_cell_voltage = 300
+set ibata_scale = 1175
+set yaw_motors_reversed = ON
+set small_angle = 180
+set simplified_gyro_filter_multiplier = 60
+set osd_units = 
+###ERROR IN diff: CORRUPTED CONFIG: osd_units = 9###
+set osd_warn_bitmask = 24575
+set osd_rssi_alarm = 10
+set osd_cap_alarm = 1000
+set osd_alt_alarm = 400
+set osd_rssi_pos = 19
+set osd_link_quality_pos = 3144
+set osd_tim_1_pos = 2594
+set osd_tim_2_pos = 2594
+set osd_remaining_time_estimate_pos = 299
+set osd_vtx_channel_pos = 2107
+set osd_crosshairs_pos = 2361
+set osd_ah_sbar_pos = 2362
+set osd_ah_pos = 2234
+set osd_current_pos = 2081
+set osd_mah_drawn_pos = 66
+set osd_gps_speed_pos = 100
+set osd_gps_lon_pos = 67
+set osd_gps_lat_pos = 35
+set osd_gps_sats_pos = 4
+set osd_home_dir_pos = 9
+set osd_home_dist_pos = 12
+set osd_flight_dist_pos = 79
+set osd_compass_bar_pos = 41
+set osd_altitude_pos = 131
+set osd_warnings_pos = 2549
+set osd_avg_cell_voltage_pos = 2114
+set osd_battery_usage_pos = 2580
+set osd_disarmed_pos = 2519
+set osd_rtc_date_time_pos = 8
+set osd_stat_bitmask = 16922156
+set osd_displayport_device = MSP
+set osd_canvas_width = 50
+set osd_canvas_height = 18
+set debug_mode = GYRO_RAW
+set vtx_band = 5
+set vtx_channel = 8
+set vtx_power = 1
+set vtx_freq = 5917
+set vcd_video_system = HD
+set gyro_1_sensor_align = DEFAULT
+set gyro_1_align_yaw = 900
+set rpm_filter_harmonics = 2
+set craft_name = Fractal Bee
+set pilot_name = ++ungood
+
+profile 0
+
+profile 1
+
+profile 2
+
+# profile 2
+set dterm_lpf1_dyn_min_hz = 90
+set dterm_lpf1_dyn_max_hz = 180
+set dterm_lpf1_static_hz = 90
+set dterm_lpf2_static_hz = 180
+set vbat_sag_compensation = 100
+set anti_gravity_gain = 90
+set iterm_relax_cutoff = 5
+set pidsum_limit = 1000
+set pidsum_limit_yaw = 1000
+set yaw_lowpass_hz = 125
+set p_pitch = 75
+set i_pitch = 134
+set d_pitch = 76
+set f_pitch = 199
+set p_roll = 71
+set i_roll = 127
+set d_roll = 67
+set f_roll = 191
+set p_yaw = 71
+set i_yaw = 127
+set f_yaw = 191
+set d_min_roll = 67
+set d_min_pitch = 76
+set thrust_linear = 20
+set simplified_master_multiplier = 160
+set simplified_d_gain = 140
+set simplified_dmax_gain = 0
+set simplified_dterm_filter_multiplier = 120
+
+profile 3
+
+# restore original profile selection
+profile 2
+
+rateprofile 0
+
+rateprofile 1
+
+rateprofile 2
+
+rateprofile 3
+
+# restore original rateprofile selection
+rateprofile 0
+
+# save configuration
